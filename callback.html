@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuickBooks Authorization Callback</title>
+</head>
+<body>
+  <h1>QuickBooks Authorization Complete</h1>
+  <p>Copy the authorization code and realm ID below.</p>
+
+  <pre id="output"></pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("output").textContent =
+      "code: " + params.get("code") + "\n" +
+      "realmId: " + params.get("realmId") + "\n" +
+      "state: " + params.get("state");
+  </script>
+</body>
+</html>
